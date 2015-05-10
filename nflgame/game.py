@@ -335,12 +335,8 @@ class Game (object):
         """
         if fpath is None:
             fpath = _jsonf % self.eid
-        try:
-            print(self.rawData, end=' ', file=gzip.open(fpath, 'w+'))
-        except IOError:
-            print("Could not cache JSON data. Please " \
-                                 "make '%s' writable." \
-                                 % os.path.dirname(fpath), file=sys.stderr)
+        with gzip.open(fpath, 'wt') as outfile:
+            outfile.write(self.rawData)
 
     def nice_score(self):
         """
@@ -791,11 +787,11 @@ def _get_json_data(eid=None, fpath=None):
     assert eid is not None or fpath is not None
 
     if fpath is not None:
-        return gzip.open(fpath).read()
+        return gzip.open(fpath, 'rt').read()
 
     fpath = _jsonf % eid
     if os.access(fpath, os.R_OK):
-        return gzip.open(fpath).read()
+        return gzip.open(fpath, 'rt').read()
     try:
         return urllib.request.urlopen(_json_base_url % (eid, eid), timeout=5).read()
     except urllib.error.HTTPError:
