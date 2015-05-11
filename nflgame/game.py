@@ -5,7 +5,8 @@ import gzip
 import json
 import socket
 import sys
-import urllib.request, urllib.error, urllib.parse
+
+import requests
 
 from nflgame import OrderedDict
 import nflgame.player
@@ -223,7 +224,7 @@ class Game (object):
         # If we can't get a valid JSON data, exit out and return None.
         try:
             rawData = _get_json_data(eid, fpath)
-        except urllib.error.URLError:
+        except requests.exceptions.RequestException:
             return None
         if rawData is None or rawData.strip() == '{}':
             return None
@@ -793,8 +794,11 @@ def _get_json_data(eid=None, fpath=None):
     if os.access(fpath, os.R_OK):
         return gzip.open(fpath, 'rt').read()
     try:
-        return urllib.request.urlopen(_json_base_url % (eid, eid), timeout=5).read()
-    except urllib.error.HTTPError:
+        url = _json_base_url % (eid, eid)
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.HTTPError:
         pass
     except socket.timeout:
         pass

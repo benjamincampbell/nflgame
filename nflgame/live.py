@@ -40,13 +40,14 @@ will probably affect the API at least a little bit.
 """
 import datetime
 import time
-import urllib.request, urllib.error, urllib.parse
 import xml.dom.minidom as xml
 
 try:
     import pytz
 except ImportError:
     pass
+
+import requests
 
 import nflgame
 import nflgame.game
@@ -355,7 +356,7 @@ def _now():
 def _update_week_number():
     global _cur_week, _cur_year, _cur_season_phase
 
-    dom = xml.parse(urllib.request.urlopen(_CUR_SCHEDULE, timeout=5))
+    dom = xml.parse(requests.get(_CUR_SCHEDULE).text)
     gms = dom.getElementsByTagName('gms')[0]
     _cur_week = int(gms.getAttribute('w'))
     _cur_year = int(gms.getAttribute('y'))
