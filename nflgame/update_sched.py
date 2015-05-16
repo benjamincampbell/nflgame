@@ -55,7 +55,7 @@ def week_schedule(year, stype, week):
     """
     url = schedule_url(year, stype, week)
     try:
-        dom = xml.parse(requests.get(url).content)
+        dom = xml.parseString(requests.get(url).text)
     except requests.exceptions.HTTPError:
         print >> sys.stderr, 'Could not load %s' % url
         return []
