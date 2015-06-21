@@ -31018,7 +31018,7 @@
     "home": "DET",
     "month": 12,
     "season_type": "REG",
-    "time": "1:00",
+    "time": "4:25",
     "wday": "Sun",
     "week": 15,
     "year": 2014
@@ -31210,7 +31210,7 @@
     "home": "SF",
     "month": 12,
     "season_type": "REG",
-    "time": "4:30",
+    "time": "8:25",
     "wday": "Sat",
     "week": 16,
     "year": 2014
@@ -31434,7 +31434,7 @@
     "home": "ATL",
     "month": 12,
     "season_type": "REG",
-    "time": "1:00",
+    "time": "4:25",
     "wday": "Sun",
     "week": 17,
     "year": 2014
@@ -31466,7 +31466,7 @@
     "home": "GB",
     "month": 12,
     "season_type": "REG",
-    "time": "1:00",
+    "time": "4:25",
     "wday": "Sun",
     "week": 17,
     "year": 2014
@@ -31578,7 +31578,7 @@
     "home": "PIT",
     "month": 12,
     "season_type": "REG",
-    "time": "1:00",
+    "time": "8:30",
     "wday": "Sun",
     "week": 17,
     "year": 2014
@@ -31834,12 +31834,28 @@
     "home": "NE",
     "month": 1,
     "season_type": "POST",
-    "time": "6:40",
+    "time": "6:50",
     "wday": "Sun",
     "week": 3,
     "year": 2014
    }
+  ],
+  [
+   "2015020100",
+   {
+    "away": "NE",
+    "day": 1,
+    "eid": "2015020100",
+    "gamekey": "56502",
+    "home": "SEA",
+    "month": 2,
+    "season_type": "POST",
+    "time": "6:30",
+    "wday": "Sun",
+    "week": 4,
+    "year": 2014
+   }
   ]
  ],
- "time": 1421088803.177974
+ "time": 1434913701.466706
 }
