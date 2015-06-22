@@ -1,5 +1,6 @@
 
 import argparse
+from collections import OrderedDict
 import time
 import json
 import os
@@ -9,7 +10,6 @@ import xml.dom.minidom as xml
 import requests
 
 import nflgame
-from nflgame import OrderedDict
 
 
 def year_phase_week(year=None, phase=None, week=None):

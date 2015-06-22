@@ -80,10 +80,6 @@ There are several active contributors to nflgame that watch the issue tracker.
 We tend to respond fairly quickly!
 """
 
-try:
-    from collections import OrderedDict
-except:
-    from ordereddict import OrderedDict  # from PyPI
 import itertools
 
 import nflgame.game
@@ -94,7 +90,6 @@ import nflgame.seq
 from nflgame.version import __version__
 from functools import reduce
 
-assert OrderedDict  # Asserting the import for static analysis.
 VERSION = __version__  # Deprecated. Backwards compatibility.
 
 NoPlayers = nflgame.seq.GenPlayerStats(None)

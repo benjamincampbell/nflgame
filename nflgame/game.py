@@ -1,4 +1,4 @@
-from collections import namedtuple
+from collections import namedtuple, OrderedDict
 import os
 import os.path as path
 import gzip
@@ -9,7 +9,6 @@ import sys
 import requests
 
 from nflgame._compat import maxsize
-from nflgame import OrderedDict
 import nflgame.player
 import nflgame.sched
 import nflgame.seq
