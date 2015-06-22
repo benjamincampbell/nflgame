@@ -8,13 +8,14 @@ import sys
 
 import requests
 
+from nflgame._compat import maxsize
 from nflgame import OrderedDict
 import nflgame.player
 import nflgame.sched
 import nflgame.seq
 import nflgame.statmap
 
-_MAX_INT = sys.maxsize
+_MAX_INT = maxsize
 
 _jsonf = path.join(path.split(__file__)[0], 'gamecenter-json', '%s.json.gz')
 _json_base_url = "http://www.nfl.com/liveupdate/game-center/%s/%s_gtd.json"
@@ -166,7 +167,7 @@ class GameClock (object):
             elif self.is_halftime():
                 self.__qtr = 3
             elif self.is_final():
-                self.__qtr = sys.maxsize
+                self.__qtr = _MAX_INT
             else:
                 self.qtr = 'Pregame'
 
