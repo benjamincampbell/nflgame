@@ -38,12 +38,13 @@ def schedule_url(year, stype, week):
     `POST`, and `gsis_week` should be a value in the range
     `[0, 17]`.
     """
-    xmlurl = 'http://www.nfl.com/ajax/scorestrip?'
+    url_template = ('http://www.nfl.com/ajax/scorestrip?'
+                    'season={year}&seasonType={stype}&week={week}')
     if stype == 'POST':
         week += 17
         if week == 21:  # NFL.com you so silly
             week += 1
-    return '%sseason=%d&seasonType=%s&week=%d' % (xmlurl, year, stype, week)
+    return url_template.format(year=year, stype=stype, week=week)
 
 
 def week_schedule(year, stype, week):
