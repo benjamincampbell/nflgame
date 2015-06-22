@@ -57,7 +57,7 @@ def week_schedule(year, stype, week):
     try:
         dom = xml.parseString(requests.get(url).text)
     except requests.exceptions.HTTPError:
-        print >> sys.stderr, 'Could not load %s' % url
+        eprint('Could not load %s' % url)
         return []
 
     games = []
