@@ -38,7 +38,7 @@
 # run. But after that, most runs will only require 32 requests for the roster
 # list (small potatoes) and perhaps a few HEAD/GET requests if there happens to
 # be a new player found.
-
+from __future__ import print_function
 
 import argparse
 import json
