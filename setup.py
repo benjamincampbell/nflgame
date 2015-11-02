@@ -15,14 +15,6 @@ except LookupError:
     codecs.register(wrapper)
 
 install_requires = ['pytz', 'httplib2', 'beautifulsoup4', 'requests']
-try:
-    import argparse
-except ImportError:
-    install_requires.append('argparse')
-try:
-    from collections import OrderedDict
-except ImportError:
-    install_requires.append('ordereddict')
 
 cwd = path.dirname(__file__)
 longdesc = codecs.open(path.join(cwd, 'longdesc.rst'), 'r', 'ascii').read()
@@ -52,7 +44,13 @@ setup(
         'Intended Audience :: End Users/Desktop',
         'Intended Audience :: Other Audience',
         'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Database',
     ],
     platforms='ANY',

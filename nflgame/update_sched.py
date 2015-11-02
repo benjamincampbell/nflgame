@@ -1,5 +1,6 @@
 
 import argparse
+from collections import OrderedDict
 import time
 import json
 import os
@@ -9,7 +10,6 @@ import xml.dom.minidom as xml
 import requests
 
 import nflgame
-from nflgame import OrderedDict
 
 
 def year_phase_week(year=None, phase=None, week=None):
@@ -38,12 +38,13 @@ def schedule_url(year, stype, week):
     `POST`, and `gsis_week` should be a value in the range
     `[0, 17]`.
     """
-    xmlurl = 'http://www.nfl.com/ajax/scorestrip?'
+    url_template = ('http://www.nfl.com/ajax/scorestrip?'
+                    'season={year}&seasonType={stype}&week={week}')
     if stype == 'POST':
         week += 17
         if week == 21:  # NFL.com you so silly
             week += 1
-    return '%sseason=%d&seasonType=%s&week=%d' % (xmlurl, year, stype, week)
+    return url_template.format(year=year, stype=stype, week=week)
 
 
 def week_schedule(year, stype, week):
@@ -57,7 +58,7 @@ def week_schedule(year, stype, week):
     try:
         dom = xml.parseString(requests.get(url).text)
     except requests.exceptions.HTTPError:
-        print >> sys.stderr, 'Could not load %s' % url
+        eprint('Could not load %s' % url)
         return []
 
     games = []

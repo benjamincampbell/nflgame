@@ -1,9 +1,8 @@
 
-
+from collections import OrderedDict
 import json
 import os.path
 
-from nflgame import OrderedDict
 import nflgame.seq
 import nflgame.statmap
 

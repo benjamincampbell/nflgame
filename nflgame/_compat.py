@@ -6,6 +6,8 @@ is_py2 = sys.version_info[0] == 2
 
 
 if not is_py2:
+	maxsize = sys.maxsize
+
 	# Python 3
 	# strings and ints
 	text_type = str
@@ -20,6 +22,7 @@ if not is_py2:
 	itervalues = operator.methodcaller('values')
 
 else:
+	maxsize = sys.maxint
 	# Python 2
 
 	# strings and ints

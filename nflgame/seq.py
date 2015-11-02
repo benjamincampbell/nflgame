@@ -1,8 +1,8 @@
+from collections import OrderedDict
 import functools
 import itertools
 import operator
 
-from nflgame import OrderedDict
 from nflgame import statmap
 
 _BUILTIN_PREDS = {

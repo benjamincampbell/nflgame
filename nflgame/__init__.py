@@ -27,7 +27,7 @@ first week of the 2013 season:
     players = nflgame.combine_game_stats(games)
     for p in players.rushing().sort('rushing_yds').limit(5):
         msg = '%s %d carries for %d yards and %d TDs'
-        print msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds)
+        print(msg % (p, p.rushing_att, p.rushing_yds, p.rushing_tds))
 
 And the output is:
 
@@ -45,7 +45,7 @@ Or you could find the top 5 passing plays in the same time period:
     games = nflgame.games(2013, week=1)
     plays = nflgame.combine_plays(games)
     for p in plays.sort('passing_yds').limit(5):
-        print p
+        print(p)
 
 And the output is:
 
@@ -80,10 +80,6 @@ There are several active contributors to nflgame that watch the issue tracker.
 We tend to respond fairly quickly!
 """
 
-try:
-    from collections import OrderedDict
-except:
-    from ordereddict import OrderedDict  # from PyPI
 import itertools
 
 import sys
@@ -102,7 +98,6 @@ import nflgame.seq
 from nflgame.version import __version__
 from functools import reduce
 
-assert OrderedDict  # Asserting the import for static analysis.
 VERSION = __version__  # Deprecated. Backwards compatibility.
 
 NoPlayers = nflgame.seq.GenPlayerStats(None)
