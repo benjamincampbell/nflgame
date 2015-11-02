@@ -75,10 +75,53 @@ class FieldPosition (object):
         else:
             self.offset = 50 - yd
 
-    def __cmp__(self, other):
-        if isinstance(other, int):
-            return cmp(self.offset, other)
-        return cmp(self.offset, other.offset)
+    def __lt__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset < other.offset
+        elif isinstance(other, int):
+            return self.offset < other
+        else:
+            return NotImplemented
+
+    def __le__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset <= other.offset
+        elif isinstance(other, int):
+            return self.offset <= other
+        else:
+            return NotImplemented
+
+    def __eq__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset == other.offset
+        elif isinstance(other, int):
+            return self.offset == other
+        else:
+            return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset >= other.offset
+        elif isinstance(other, int):
+            return self.offset >= other
+        else:
+            return NotImplemented
+
+    def __gt__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset > other.offset
+        elif isinstance(other, int):
+            return self.offset > other
+        else:
+            return NotImplemented
+
+    def __ne__(self, other):
+        if isinstance(other, GameClock):
+            return self.offset != other.offset
+        elif isinstance(other, int):
+            return self.offset != other
+        else:
+            return NotImplemented
 
     def __str__(self):
         if self.offset > 0:
@@ -115,9 +158,44 @@ class PossessionTime (object):
         """
         return self.seconds + self.minutes * 60
 
-    def __cmp__(self, other):
-        a, b = (self.minutes, self.seconds), (other.minutes, other.seconds)
-        return cmp(a, b)
+    def _cmp_key(self):
+        return (self.minutes, self.seconds)
+
+    def __lt__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() < other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __le__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() <= other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __eq__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() == other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() >= other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __gt__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() > other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __ne__(self, other):
+        if isinstance(other, PossessionTime):
+            return self._cmp_key() != other._cmp_key()
+        else:
+            return NotImplemented
 
     def __add__(self, other):
         new_time = PossessionTime('0:00')
@@ -193,12 +271,44 @@ class GameClock (object):
     def is_final(self):
         return 'final' in self.qtr.lower()
 
-    def __cmp__(self, other):
-        if self.__qtr != other.__qtr:
-            return cmp(self.__qtr, other.__qtr)
-        elif self._minutes != other._minutes:
-            return cmp(other._minutes, self._minutes)
-        return cmp(other._seconds, self._seconds)
+    def _cmp_key(self):
+        return self.__qtr, self._minutes, self._seconds
+
+    def __lt__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() < other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __le__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() <= other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __eq__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() == other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() >= other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __gt__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() > other._cmp_key()
+        else:
+            return NotImplemented
+
+    def __ne__(self, other):
+        if isinstance(other, GameClock):
+            return self._cmp_key() != other._cmp_key()
+        else:
+            return NotImplemented
 
     def __str__(self):
         """
