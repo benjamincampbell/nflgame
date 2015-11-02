@@ -48,7 +48,7 @@ import re
 import sys
 import traceback
 
-import httplib2
+import requests
 
 from bs4 import BeautifulSoup
 
@@ -70,12 +70,6 @@ urls = {
     'roster': 'http://www.nfl.com/teams/roster?team=%s',
     'gsis_profile': 'http://www.nfl.com/players/profile?id=%s',
 }
-
-
-def new_http():
-    http = httplib2.Http(timeout=10)
-    http.follow_redirects = False
-    return http
 
 
 def initial_mappings(conf):
@@ -104,20 +98,21 @@ def profile_id_from_url(url):
 
 
 def profile_url(gsis_id):
-    resp, content = new_http().request(urls['gsis_profile'] % gsis_id, 'HEAD')
-    if resp['status'] != '301':
+    url = urls['gsis_profile'] % gsis_id
+    response = requests.head(url)
+    if response.status_code != 301:
         return None
-    loc = resp['location']
+    loc = response.headers['location']
     if not loc.startswith('http://'):
         loc = 'http://www.nfl.com' + loc
     return loc
 
 
 def gsis_id(profile_url):
-    resp, content = new_http().request(profile_url, 'GET')
-    if resp['status'] != '200':
+    response = requests.get(profile_url)
+    if response.status_code != 200:
         return None
-    m = re.search('GSIS\s+ID:\s+([0-9-]+)', content)
+    m = re.search('GSIS\s+ID:\s+([0-9-]+)', response.text)
     if m is None:
         return None
     gid = m.group(1).strip()
@@ -127,10 +122,11 @@ def gsis_id(profile_url):
 
 
 def roster_soup(team):
-    resp, content = new_http().request(urls['roster'] % team, 'GET')
-    if resp['status'] != '200':
+    url = urls['roster'] % team
+    response = requests.get(url)
+    if response.status_code != 200:
         return None
-    return BeautifulSoup(content, PARSER)
+    return BeautifulSoup(response.text, PARSER)
 
 
 def try_int(s):
@@ -463,13 +459,13 @@ def run():
 
         def fetch(t):
             gid, purl = t
-            resp, content = new_http().request(purl, 'GET')
-            if resp['status'] != '200':
-                if resp['status'] == '404':
+            response = requests.get(purl)
+            if response.status_code != 200:
+                if response.status_code == 404:
                     return gid, purl, False
                 else:
                     return gid, purl, None
-            return gid, purl, content
+            return gid, purl, response.text
         for i, (gid, purl, html) in enumerate(pool.imap(fetch, gids), 1):
             progress(i, len(gids))
             more_meta = meta_from_profile_html(html)
