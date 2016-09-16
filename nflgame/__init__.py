@@ -122,6 +122,7 @@ teams = [
     ['IND', 'Indianapolis', 'Colts', 'Indianapolis Colts'],
     ['JAC', 'Jacksonville', 'Jaguars', 'Jacksonville Jaguars', 'JAX'],
     ['KC', 'Kansas City', 'Chiefs', 'Kansas City Chiefs', 'K.C.', 'KAN'],
+    ['LA', 'Los Angeles', 'Rams', 'Los Angeles Rams', 'L.A.'],
     ['MIA', 'Miami', 'Dolphins', 'Miami Dolphins'],
     ['MIN', 'Minnesota', 'Vikings', 'Minnesota Vikings'],
     ['NE', 'New England', 'Patriots', 'New England Patriots', 'N.E.', 'NWE'],
