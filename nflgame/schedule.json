@@ -42922,7 +42922,262 @@
     "week": 1,
     "year": 2016
    }
+  ],
+  [
+   "2017101900",
+   {
+    "away": "KC",
+    "day": 19,
+    "eid": "2017101900",
+    "gamekey": "57326",
+    "home": "OAK",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "8:25",
+    "wday": "Thu",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102200",
+   {
+    "away": "TB",
+    "day": 22,
+    "eid": "2017102200",
+    "gamekey": "57327",
+    "home": "BUF",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102201",
+   {
+    "away": "CAR",
+    "day": 22,
+    "eid": "2017102201",
+    "gamekey": "57328",
+    "home": "CHI",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102202",
+   {
+    "away": "TEN",
+    "day": 22,
+    "eid": "2017102202",
+    "gamekey": "57329",
+    "home": "CLE",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102203",
+   {
+    "away": "NO",
+    "day": 22,
+    "eid": "2017102203",
+    "gamekey": "57330",
+    "home": "GB",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102204",
+   {
+    "away": "JAX",
+    "day": 22,
+    "eid": "2017102204",
+    "gamekey": "57331",
+    "home": "IND",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102205",
+   {
+    "away": "ARI",
+    "day": 22,
+    "eid": "2017102205",
+    "gamekey": "57332",
+    "home": "LA",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102206",
+   {
+    "away": "NYJ",
+    "day": 22,
+    "eid": "2017102206",
+    "gamekey": "57333",
+    "home": "MIA",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102207",
+   {
+    "away": "BAL",
+    "day": 22,
+    "eid": "2017102207",
+    "gamekey": "57334",
+    "home": "MIN",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "1:00",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102208",
+   {
+    "away": "CIN",
+    "day": 22,
+    "eid": "2017102208",
+    "gamekey": "57335",
+    "home": "PIT",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "4:25",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102209",
+   {
+    "away": "DAL",
+    "day": 22,
+    "eid": "2017102209",
+    "gamekey": "57336",
+    "home": "SF",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "4:05",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102210",
+   {
+    "away": "DEN",
+    "day": 22,
+    "eid": "2017102210",
+    "gamekey": "57337",
+    "home": "LAC",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "4:25",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102211",
+   {
+    "away": "SEA",
+    "day": 22,
+    "eid": "2017102211",
+    "gamekey": "57338",
+    "home": "NYG",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "4:25",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102212",
+   {
+    "away": "ATL",
+    "day": 22,
+    "eid": "2017102212",
+    "gamekey": "57339",
+    "home": "NE",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "8:30",
+    "wday": "Sun",
+    "week": 7,
+    "year": 2017
+   }
+  ],
+  [
+   "2017102300",
+   {
+    "away": "WAS",
+    "day": 23,
+    "eid": "2017102300",
+    "gamekey": "57340",
+    "home": "PHI",
+    "meridiem": "PM",
+    "month": 10,
+    "season_type": "REG",
+    "time": "8:30",
+    "wday": "Mon",
+    "week": 7,
+    "year": 2017
+   }
   ]
  ],
- "time": 1483966449.483
+ "time": 1508534561.2414725
 }
