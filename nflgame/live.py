@@ -72,11 +72,19 @@ Pinged infrequently to discover the current week number, year and week type.
 The actual schedule of games is taken from the schedule module.
 """
 # _CUR_SCHEDULE = "http://www.nfl.com/liveupdate/scorestrip/postseason/ss.xml"
+<<<<<<< HEAD
 #
 # """
 # The URL for the XML schedule of the post season. This is only used
 # during the post season.
 #
+=======
+# 
+# """
+# The URL for the XML schedule of the post season. This is only used
+# during the post season.
+# 
+>>>>>>> 2ac667f192ab0db6f7f8fa846c048bbb1bfab8d5
 # TODO: How do we know if it's the post season?
 # """
 

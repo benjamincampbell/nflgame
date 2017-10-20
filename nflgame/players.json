@@ -79646,7 +79646,7 @@
     },
     "00-0030757": {
         "birthdate": "5/9/1991",
-        "college": "Colorado State-Pueblo",
+        "college": "Colorado State",
         "first_name": "Mike",
         "full_name": "Mike Pennel",
         "gsis_id": "00-0030757",
@@ -91393,7 +91393,7 @@
     },
     "00-0031665": {
         "birthdate": "9/13/1991",
-        "college": "South Dakota",
+        "college": "South Dakota State",
         "first_name": "Zach",
         "full_name": "Zach Zenner",
         "gsis_id": "00-0031665",
@@ -99286,6 +99286,7 @@
         "weight": 240,
         "years_pro": 0
     },
+<<<<<<< HEAD
     "00-0032670": {
         "birthdate": "10/21/1993",
         "college": "Wake Forest",
@@ -99303,6 +99304,8 @@
         "weight": 240,
         "years_pro": 1
     },
+=======
+>>>>>>> 2ac667f192ab0db6f7f8fa846c048bbb1bfab8d5
     "00-0032671": {
         "birthdate": "9/12/1994",
         "college": "Colorado State",
@@ -104583,6 +104586,7 @@
         "weight": 196,
         "years_pro": 0
     },
+<<<<<<< HEAD
     "00-0033364": {
         "birthdate": "10/14/1993",
         "college": "Miami (Fla.)",
@@ -104600,6 +104604,8 @@
         "weight": 219,
         "years_pro": 0
     },
+=======
+>>>>>>> 2ac667f192ab0db6f7f8fa846c048bbb1bfab8d5
     "00-0033368": {
         "birthdate": "6/26/1994",
         "college": "Pittsburgh",
